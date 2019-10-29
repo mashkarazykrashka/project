@@ -36,7 +36,7 @@ use App\View\Helper\HTML;
         <li class="nav-item">
           <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("site/about")?>">About</a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("usergroup/show", ['page' => 1])?>">Users Group</a>
         </li>
         <li class="nav-item">
@@ -44,7 +44,7 @@ use App\View\Helper\HTML;
         </li>
         <li class="nav-item">
           <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("users/show", ['page' => 1])?>">Users</a>
-        </li>
+        </li> -->
 
         <li class="nav-item">
           <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("site/loginform")?>">Login</a>
@@ -52,6 +52,22 @@ use App\View\Helper\HTML;
 
         <li class="nav-item">
           <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("signup/showform")?>">Sign Up</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("supply/show", ['page' => 1])?>">Supply</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("work/show", ['page' => 1])?>">Work</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("goods/show", ['page' => 1])?>">Goods</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("recipt/show", ['page' => 1])?>">Recipt</a>
         </li>
 
         <!-- <li class="nav-item dropdown">

@@ -20,5 +20,25 @@ return [
     '/users/add' => 'users/showaddform',
     '/users/delete{id}' => 'users/delete',
 
+    '/supply/page{page}' => 'supply/show',
+    '/supply/edit{id}' => 'supply/showeditform',
+    '/supply/add' => 'supply/showaddform',
+    '/supply/delete{id}' => 'supply/delete',
+
+    '/work/page{page}' => 'work/show',
+    '/work/edit{id}' => 'work/showeditform',
+    '/work/add' => 'work/showaddform',
+    '/work/delete{id}' => 'work/delete',
+
+    '/goods/page{page}' => 'goods/show',
+    '/goods/edit{id}' => 'goods/showeditform',
+    '/goods/add' => 'goods/showaddform',
+    '/goods/delete{id}' => 'goods/delete',
+
+    '/recipt/page{page}' => 'recipt/show',
+    '/recipt/edit{id}' => 'recipt/showeditform',
+    '/recipt/add' => 'recipt/showaddform',
+    '/recipt/delete{id}' => 'recipt/delete',
+
     '/signup' => 'signup/showform'
 ];
