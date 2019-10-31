@@ -13,15 +13,19 @@ echo "<div class='container'><div class='row justify-content-center'>";
 echo "<table class='table table-striped table-dark'>";
 
 echo "<tr>";
-foreach ($tableHeaders as $fieldName => $th ) {
-    echo "<th>".(empty($th) ? $fieldName : $th)."</th>";
+foreach ($tableHeaders as $fieldName => $th) {
+    if ($fieldName != 'id') {
+        echo "<th>" . (empty($th) ? $fieldName : $th) . "</th>";
+    }
 }
 echo "<th colspan='2'></th></tr>";
 
 foreach ($table as $row) {
     echo "<tr>";
-    foreach ($row as $value) {
-        echo "<td>$value</td>";
+    foreach ($row as $key => $value) {
+        if ($key != 'id') {
+            echo "<td>$value</td>";
+        }
     }
     echo "<td><a href='$editLink" . $row['id'] . "' class='btn btn-warning'>Edit</a></td>";
     echo "<td><a href='$delLink" . $row['id'] . "' class='btn btn-danger'>Delete</a></td></tr>";
@@ -30,4 +34,3 @@ echo "</table>";
 echo "<a href='$addLink' class='btn btn-success'>Add new</a>";
 echo "</div></div>";
 echo $paginationHTML;
-

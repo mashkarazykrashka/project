@@ -33,9 +33,9 @@ use App\View\Helper\HTML;
         <li class="nav-item active">
           <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("site/home")?>">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("site/about")?>">About</a>
-        </li>
+        </li> -->
         <!-- <li class="nav-item">
           <a class="nav-link" href="<?=Dispatcher::dispatcher()->encodeUri("usergroup/show", ['page' => 1])?>">Users Group</a>
         </li>
