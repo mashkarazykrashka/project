@@ -7,4 +7,9 @@ class WorkController extends AbstractTableController
     protected $tableName = 'work';
     protected $viewPatternsPath = 'templates/table/';
     protected $pageSize = 2;
+
+    public function actionShowEditForm()
+    {
+        $this->view->setPatternsPath('templates/workTable/');
+    }
 }
