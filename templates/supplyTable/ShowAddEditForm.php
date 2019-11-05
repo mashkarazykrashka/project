@@ -9,9 +9,9 @@
 
                             echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
                             echo "<br><select name='users_id'>";
-                            foreach ($users as $id => $name) {
-                                if ($name !== 'Администрация') {
-                                    echo "<option value='$id'>$name</option>";
+                            foreach ($users as $id => $userName) {
+                                if ($userName !== 'Администрация' and $userName == $_SESSION['user']['name']) {
+                                    echo "<option value='$id'>$userName</option>";
                                 }
                             }
 

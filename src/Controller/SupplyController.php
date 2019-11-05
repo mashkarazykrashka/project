@@ -11,7 +11,7 @@ use TexLab\MyDB\DbEntity;
 class SupplyController extends AbstractTableController
 {
     protected $tableName = 'supply';
-    protected $viewPatternsPath = 'templates/table/';
+    protected $viewPatternsPath = 'templates/supplyTable/';
     protected $pageSize = 10;
 
 
