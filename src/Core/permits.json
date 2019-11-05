@@ -4,9 +4,11 @@
         "UserGroupController",
         "UsersController"
     ],
-    "dft": [
-        "tableOneController",
-        "tableTwoController",
+    "dft": ["FeedBackController",
+        "GoodsController",
+        "ReciptController",
+        "SingUpController",
+        "SupplyController",
         "UserGroupController",
         "UsersController"
     ]

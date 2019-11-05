@@ -33,7 +33,7 @@ class SupplyController extends AbstractTableController
             'columnsNames' => $this->table->getColumnsNames(),
             'editValues' => $this->table->get(['id' => $_GET['id']])[0],
             'URL' => '?t=' . $this->shortClassName() . '&a=Edit&id=' . $_GET['id'],
-            'work' => $tableUsers->getColumn('name'),
+            'users' => $tableUsers->getColumn('name'),
             'recipt' => $tableRecipt->getColumn('nameRecipt'),
             'goods' => $tableGoods->getColumn('nameGoods'),
             'tableHeaders' => $this->table->getColumnsComments()
