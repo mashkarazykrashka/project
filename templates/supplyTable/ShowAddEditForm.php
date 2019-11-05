@@ -5,12 +5,14 @@
                 <?php
                 foreach ($columnsNames as $name) {
                     if ($name != 'id') {
-                        if ($name == 'work_id') {
+                        if ($name == 'users_id') {
 
                             echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
-                            echo "<br><select name='work_id'>";
-                            foreach ($work as $id => $workName) {
-                                echo "<option value='$id'>$workName</option>";
+                            echo "<br><select name='users_id'>";
+                            foreach ($users as $id => $name) {
+                                if ($name !== 'Администрация') {
+                                    echo "<option value='$id'>$name</option>";
+                                }
                             }
 
                             echo "</select></lable><br>";

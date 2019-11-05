@@ -23,7 +23,7 @@ class SupplyController extends AbstractTableController
 
     public function actionShowEditForm()
     {
-        $tableWork = new DbEntity('work', DB::Link(Conf::MYSQL));
+        $tableUsers = new DbEntity('users', DB::Link(Conf::MYSQL));
         $tableRecipt = new DbEntity('recipt', DB::Link(Conf::MYSQL));
         $tableGoods = new DbEntity('goods', DB::Link(Conf::MYSQL));
 
@@ -33,7 +33,7 @@ class SupplyController extends AbstractTableController
             'columnsNames' => $this->table->getColumnsNames(),
             'editValues' => $this->table->get(['id' => $_GET['id']])[0],
             'URL' => '?t=' . $this->shortClassName() . '&a=Edit&id=' . $_GET['id'],
-            'work' => $tableWork->getColumn('nameWork'),
+            'work' => $tableUsers->getColumn('name'),
             'recipt' => $tableRecipt->getColumn('nameRecipt'),
             'goods' => $tableGoods->getColumn('nameGoods'),
             'tableHeaders' => $this->table->getColumnsComments()
@@ -42,7 +42,7 @@ class SupplyController extends AbstractTableController
 
     public function actionShowAddForm()
     {
-        $tableWork = new DbEntity('work', DB::Link(Conf::MYSQL));
+        $tableUsers = new DbEntity('users', DB::Link(Conf::MYSQL));
         $tableRecipt = new DbEntity('recipt', DB::Link(Conf::MYSQL));
         $tableGoods = new DbEntity('goods', DB::Link(Conf::MYSQL));
 
@@ -51,7 +51,7 @@ class SupplyController extends AbstractTableController
         $this->render("ShowAddEditForm", [
             'columnsNames' => $this->table->getColumnsNames(),
             'URL' => '?t=' . $this->shortClassName() . '&a=Add',
-            'work' => $tableWork->getColumn('nameWork'),
+            'users' => $tableUsers->getColumn('name'),
             'recipt' => $tableRecipt->getColumn('nameRecipt'),
             'goods' => $tableGoods->getColumn('nameGoods'),
             'tableHeaders' => $this->table->getColumnsComments()
