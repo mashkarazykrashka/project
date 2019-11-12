@@ -36,7 +36,8 @@ class SupplyController extends AbstractTableController
             'users' => $tableUsers->getColumn('name'),
             'recipt' => $tableRecipt->getColumn('nameRecipt'),
             'goods' => $tableGoods->getColumn('nameGoods'),
-            'tableHeaders' => $this->table->getColumnsComments()
+            'tableHeaders' => $this->table->getColumnsComments(),
+            'currentUser' => ($_SESSION['user']['name'] == "Администрация" ? 1 : $_SESSION['user']['name']),
         ]);
     }
 
@@ -54,7 +55,9 @@ class SupplyController extends AbstractTableController
             'users' => $tableUsers->getColumn('name'),
             'recipt' => $tableRecipt->getColumn('nameRecipt'),
             'goods' => $tableGoods->getColumn('nameGoods'),
-            'tableHeaders' => $this->table->getColumnsComments()
+            'tableHeaders' => $this->table->getColumnsComments(),
+            'currentUser' => ($_SESSION['user']['name'] == "Администрация" ? 1 : $_SESSION['user']['name']),
+
         ]);
     }
 }

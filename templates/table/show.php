@@ -18,8 +18,7 @@ foreach ($tableHeaders as $fieldName => $th) {
         echo "<th>" . (empty($th) ? $fieldName : $th) . "</th>";
     }
 }
-if ($_SESSION['user']['name'] == "Администрация") {
-
+if ($currentUser == 1) {
     echo "<th colspan='2'></th></tr>";
 }
 foreach ($table as $row) {
@@ -29,7 +28,7 @@ foreach ($table as $row) {
             echo "<td>$value</td>";
         }
     }
-    if ($_SESSION['user']['name'] == "Администрация") {
+    if ($currentUser == 1) {
         echo "<td><a href='$editLink" . $row['id'] . "' class='btn btn-warning'>Edit</a></td>";
         echo "<td><a href='$delLink" . $row['id'] . "' class='btn btn-danger'>Delete</a></td></tr>";
     }

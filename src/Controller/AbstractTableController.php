@@ -28,7 +28,6 @@ abstract class AbstractTableController extends AbstractController
         $this->render("show", [
             'table' => $table->getPage($page),
             'pageCount' => $table->pageCount(),
-            // 'paginationLink' => '?t=' . $this->shortClassName() . '&a=Show&page=',
             'editLink' => Dispatcher::dispatcher()->encodeUri($this->shortClassName() . "/showeditform", ['id' => '']),
             'addLink' => Dispatcher::dispatcher()->encodeUri($this->shortClassName() . "/showaddform"),
             'delLink' => Dispatcher::dispatcher()->encodeUri($this->shortClassName() . "/delete", ['id' => '']),
@@ -36,7 +35,7 @@ abstract class AbstractTableController extends AbstractController
             'currentPage' => $page,
             'controllerName' => $this->shortClassName(),
             'tableHeaders' => $this->table->getColumnsComments(),
-
+            'currentUser' => ($_SESSION['user']['name'] == "Администрация" ? 1 : $_SESSION['user']['name']),
         ]);
     }
 
@@ -52,7 +51,6 @@ abstract class AbstractTableController extends AbstractController
             'columnsNames' => $this->table->getColumnsNames(),
             'editValues' => $this->table->get(['id' => $_GET['id']])[0],
             'URL' => '?t=' . $this->shortClassName() . '&a=Edit&id=' . $_GET['id'],
-            // 'URL' => Dispatcher::dispatcher()->encodeUri($this->shortClassName() . "/Edit", ['id' => $_GET['id']]),
             'tableHeaders' => $this->table->getColumnsComments()
         ]);
     }

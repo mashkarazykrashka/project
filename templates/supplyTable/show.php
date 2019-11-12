@@ -27,10 +27,8 @@ foreach ($table as $row) {
             echo "<td>$value</td>";
         }
     }
-    foreach ($row as $key => $value){
-        if ($key == "users_id" && $value == $_SESSION['user']['name'] 
-        || $_SESSION['user']['name'] == "Администрация"
-        ) {
+    foreach ($row as $key => $value) {
+        if ($key == 'users_id' AND ($currentUser == $value || $currentUser == 1)) {
             echo "<td><a href='$editLink" . $row['id'] . "' class='btn btn-warning'>Edit</a></td>";
             echo "<td><a href='$delLink" . $row['id'] . "' class='btn btn-danger'>Delete</a></td></tr>";
         }
@@ -40,5 +38,4 @@ echo "</table>";
 echo "<a href='$addLink' class='btn btn-success'>Add new</a>";
 echo "</div></div>";
 echo $paginationHTML;
-
 
