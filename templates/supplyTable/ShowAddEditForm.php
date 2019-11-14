@@ -7,16 +7,17 @@
                     if ($name != 'id') {
                         if ($name == 'users_id') {
 
-                            echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
-                            echo "<br><select name='users_id'>";
+                            if (!$isAdmin) {
+                                echo "<input type ='hidden' value = '$currentUserId' name = 'users_id'>";
+                            } else {
+                                echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
+                                echo "<br><select name='users_id'>";
 
-                            foreach ($users as $id => $userName) {
-                                if ($userName == $currentUser || $currentUser == 1 AND $userName != "Администрация") {
+                                foreach ($users as $id => $userName) {
                                     echo "<option value='$id'>$userName</option>";
                                 }
+                                echo "</select></lable><br>";
                             }
-
-                            echo "</select></lable><br>";
                         } elseif ($name == 'recipt_id') {
 
                             echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);

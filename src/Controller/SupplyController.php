@@ -26,18 +26,20 @@ class SupplyController extends AbstractTableController
         $tableUsers = new DbEntity('users', DB::Link(Conf::MYSQL));
         $tableRecipt = new DbEntity('recipt', DB::Link(Conf::MYSQL));
         $tableGoods = new DbEntity('goods', DB::Link(Conf::MYSQL));
+        $supply = new DbEntity('supply', DB::Link(Conf::MYSQL));
 
         $this->view->setPatternsPath('templates/supplyTable/');
 
         $this->render("ShowAddEditForm", [
             'columnsNames' => $this->table->getColumnsNames(),
             'editValues' => $this->table->get(['id' => $_GET['id']])[0],
+            'currentUserId' => $supply->get(['id' => $_GET['id']])[0]['users_id'],
             'URL' => '?t=' . $this->shortClassName() . '&a=Edit&id=' . $_GET['id'],
             'users' => $tableUsers->getColumn('name'),
             'recipt' => $tableRecipt->getColumn('nameRecipt'),
             'goods' => $tableGoods->getColumn('nameGoods'),
             'tableHeaders' => $this->table->getColumnsComments(),
-            'currentUser' => ($_SESSION['user']['cod'] == "adm" ? 1 : $_SESSION['user']['name']),
+            'isAdmin' => $_SESSION['user']['cod'] == "adm" ? true : false 
         ]);
     }
 

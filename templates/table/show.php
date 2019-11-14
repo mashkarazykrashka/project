@@ -15,10 +15,10 @@ echo "<table class='table table-striped table-dark'>";
 echo "<tr>";
 foreach ($tableHeaders as $fieldName => $th) {
     if ($fieldName != 'id') {
-        echo "<th>" . (empty($th) ? $fieldName : $th) . "</th>";
+        echo "<th>" . (empty($th) ? $fieldName : $th) . "<a href='$sortLink" . $fieldName . "'>▼</a></th>";
     }
 }
-if ($currentUser == 1) {
+if ($isAdmin) {
     echo "<th colspan='2'></th></tr>";
 }
 foreach ($table as $row) {
@@ -28,7 +28,7 @@ foreach ($table as $row) {
             echo "<td>$value</td>";
         }
     }
-    if ($currentUser == 1) {
+    if ($isAdmin) {
         echo "<td><a href='$editLink" . $row['id'] . "' class='btn btn-warning'>Edit</a></td>";
         echo "<td><a href='$delLink" . $row['id'] . "' class='btn btn-danger'>Delete</a></td></tr>";
     }

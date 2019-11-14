@@ -15,7 +15,7 @@ echo "<table class='table table-striped table-dark'>";
 echo "<tr>";
 foreach ($tableHeaders as $fieldName => $th) {
     if ($fieldName != 'id') {
-        echo "<th>" . (empty($th) ? $fieldName : $th) . "</th>";
+        echo "<th>" . (empty($th) ? $fieldName : $th) . "<a href='*" . $th . "'>▼</a></th>";
     }
 }
 echo "<th colspan='2'></th></tr>";

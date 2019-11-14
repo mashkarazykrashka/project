@@ -17,7 +17,7 @@ trait AuthTrait
     public function actionLogin()
     {
         if (Auth::registerUser($_POST['user'], $_POST['pass'])) {
-            $this->redirectToRoot();
+            $this->redirect('?t=' . $this->shortClassName() . '&a=home');
         } else {
             $this->redirect('?a=loginform');
         }
