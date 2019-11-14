@@ -34,6 +34,8 @@ return [
     '/goods/edit{id}' => 'goods/showeditform',
     '/goods/add' => 'goods/showaddform',
     '/goods/delete{id}' => 'goods/delete',
+    // '/goods/delete{id}' => 'goods/delete',
+
 
     '/recipt/page{page}' => 'recipt/show',
     '/recipt/edit{id}' => 'recipt/showeditform',
