@@ -2,15 +2,16 @@
 
 /** @var string $loginURL */
 ?>
-
+<br>
+<br>
 <div>
-    <form action="<?= $loginURL ?>" method="POST" class="text-center border border-light p-5">
+    <form action="<?= $loginURL ?>" method="POST" class="form">
         <label>
-            <input class="form-control mb-4"type="text" name="user" placeholder="User">
+            <input class="field"type="text" name="user" placeholder="User">
         </label><br/>
         <label>
-            <input class="form-control mb-4"type="password" name="pass" placeholder="Password">
+            <input class="field"type="password" name="pass" placeholder="Password">
         </label><br/>
-        <input class="btn btn-info my-4" type="submit" value="Login">
+        <input class="button" type="submit" value="Login">
     </form>
 </div>

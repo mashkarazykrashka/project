@@ -1,17 +1,16 @@
 <div>
-    <div class='container'>
-        <div class='row justify-content-center'>
-            <form action="<?= $URL ?>" method="POST" class="text-center border border-light p-3">
+    <div class='form'>
+            <form action="<?= $URL ?>" method="POST" >
                 <?php
                 foreach ($columnsNames as $name) {
                     if ($name != 'id') {
                         if ($name == 'users_id') {
 
-                            if (!$isAdmin) {
+                            if ($isAdmin) {
                                 echo "<input type ='hidden' value = '$currentUserId' name = 'users_id'>";
                             } else {
                                 echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
-                                echo "<br><select name='users_id'>";
+                                echo "<br><select class='field' name='users_id'>";
 
                                 foreach ($users as $id => $userName) {
                                     echo "<option value='$id'>$userName</option>";
@@ -21,7 +20,7 @@
                         } elseif ($name == 'recipt_id') {
 
                             echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
-                            echo "<br><select name='recipt_id'>";
+                            echo "<br><select class='field' name='recipt_id'>";
                             foreach ($recipt as $id => $reciptName) {
                                 echo "<option value='$id'>$reciptName</option>";
                             }
@@ -30,7 +29,7 @@
                         } elseif ($name == 'goods_id') {
 
                             echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
-                            echo "<br><select name='goods_id'>";
+                            echo "<br><select class='field' name='goods_id'>";
                             foreach ($goods as $id => $goodsName) {
                                 echo "<option value='$id'>$goodsName</option>";
                             }
@@ -39,14 +38,14 @@
                         } else {
                             echo "<label>"
                                 . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name])
-                                . "<input class='form-control mb-4' type='text' name='"
+                                . "<input class='field' name='"
                                 . $name . "' value='"
                                 . ($editValues[$name] ?? '') . "'></label><br>";
                         }
                     }
                 }
                 ?>
-                <input class="btn btn-info my-4" type="submit" value="OK">
+                <input class="button" type="submit" value="OK">
             </form>
         </div>
     </div>

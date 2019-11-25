@@ -28,7 +28,7 @@ foreach ($table as $row) {
         }
     }
     foreach ($row as $key => $value) {
-        if ($key == 'users_id' AND ($currentUser == $value || $currentUser == 1)) {
+        if ($key == 'users_id' AND ($currentUser == $value || $isAdmin)) {
             echo "<td><a href='$editLink" . $row['id'] . "' class='btn btn-warning'>Edit</a></td>";
             echo "<td><a href='$delLink" . $row['id'] . "' class='btn btn-danger'>Delete</a></td></tr>";
         }
