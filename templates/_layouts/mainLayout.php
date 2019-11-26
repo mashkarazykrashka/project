@@ -22,8 +22,8 @@ use App\View\Helper\HTML;
 
 </head>
 
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<body style="background-color:#fefaff">
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #845ec2">
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -86,7 +86,7 @@ use App\View\Helper\HTML;
   <!-- <div class="container"> -->
 
     <div id="user_state" class="float-right">
-      <?= Auth::currentUserInfo() . " " . (isset($_SESSION['user']) ? "<a href='?a=logout'>Logout</a>" : "") ?>
+      <?= Auth::currentUserInfo() . " " . (isset($_SESSION['user']) ? "<a style='color: #552c96' href='?a=logout'>Logout</a>" : "") ?>
     </div>
     <br />
   <!-- </div> -->
@@ -94,7 +94,6 @@ use App\View\Helper\HTML;
   <div id="maincontent">
     <?php $this->body(); ?>
     <br>
-        <a href="#" onclick="history.back();">Назад</a>
 
   </div>
 
