@@ -14,6 +14,7 @@ abstract class AbstractTableController extends AbstractController
     protected $tableName;
     protected $pageSize;
 
+
     public function __construct()
     {
         parent::__construct();
@@ -24,7 +25,13 @@ abstract class AbstractTableController extends AbstractController
     {
 
         $page = $_GET['page'] ?? 1;
+        $sortedFieldName = $_GET['sort'] ?? 'id';
+        // $_GET['sort'] ??= "id";
+
         $table = $this->table->setPageSize($this->pageSize);
+        $table->setOrderBy($sortedFieldName);
+
+        // echo $table->getSQL();
         $this->render("show", [
             'table' => $table->getPage($page),
             'pageCount' => $table->pageCount(),
@@ -32,15 +39,12 @@ abstract class AbstractTableController extends AbstractController
             'addLink' => Dispatcher::dispatcher()->encodeUri($this->shortClassName() . "/showaddform"),
             'delLink' => Dispatcher::dispatcher()->encodeUri($this->shortClassName() . "/delete", ['id' => '']),
             'paginationLink' => Dispatcher::dispatcher()->encodeUri($this->shortClassName() . "/show", ['page' => '']),
+            'sortedFieldName' => $sortedFieldName,
             'currentPage' => $page,
             'controllerName' => $this->shortClassName(),
             'tableHeaders' => $this->table->getColumnsComments(),
             'isAdmin' => ($_SESSION['user']['cod'] == "adm" ? true : false),
             'currentUserName' => $_SESSION['user']['name'],
-            
-            'sortLink' => Dispatcher::dispatcher()->encodeUri($this->shortClassName() . "/show", ['sort' => '']),
-
-            // 'sortLink' => $table->getPage($page)->setOrderBy('coefTrans')
         ]);
     }
 

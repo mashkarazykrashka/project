@@ -43,7 +43,7 @@
                         } else {
                             echo "<label>"
                                 . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name])
-                                . "<input class='field' name='"
+                                . "<input class='field' type='number' name='"
                                 . $name . "' value='"
                                 . ($editValues[$name] ?? '') . "'></label><br>";
                         }
