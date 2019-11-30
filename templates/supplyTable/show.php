@@ -28,8 +28,8 @@ foreach ($table as $row) {
         }
     }
     foreach ($row as $key => $value) {
-        if ($key == 'users_id' AND ($currentUser == $value || $isAdmin)) {
-            echo "<td><a href='$editLink" . $row['id'] . "' class='button_edit'>Edit</a></td>";
+        if ($key == 'users_id' AND ($currentUserName == $value || $isAdmin)) {
+            echo "<td><a href='$editLink" . $row['id'] . "'  class='button_edit'>Edit</a></td>";
             echo "<td><a href='$delLink" . $row['id'] . "' class='button_del'>Delete</a></td></tr>";
         }
     }

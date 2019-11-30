@@ -77,7 +77,7 @@ use App\View\Helper\HTML;
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="<?=Dispatcher::dispatcher()->encodeUri("goods/show", ['page' => 1])?>">Товары</a>
           <a class="dropdown-item" href="<?=Dispatcher::dispatcher()->encodeUri("recipt/show", ['page' => 1])?>">Покупатели</a>
-          <a class="dropdown-item <?=$_SESSION['user']['name'] != "Администрация" ? " disabled" : ""?>"  href="<?=Dispatcher::dispatcher()->encodeUri("users/show", ['page' => 1])?>">Поставщики</a>
+          <a class="dropdown-item <?=$_SESSION['user']['cod'] != "adm" ? " disabled" : ""?>"  href="<?=Dispatcher::dispatcher()->encodeUri("users/show", ['page' => 1])?>">Поставщики</a>
         </div>
       </li>
       </ul>

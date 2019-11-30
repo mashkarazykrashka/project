@@ -6,5 +6,5 @@ class ReciptController extends AbstractTableController
 {
     protected $tableName = 'recipt';
     protected $viewPatternsPath = 'templates/table/';
-    protected $pageSize = 2;
+    protected $pageSize = 10;
 }

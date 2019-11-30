@@ -6,5 +6,5 @@ class FeedBackController extends AbstractTableController
 {
     protected $tableName = 'feedbacktable';
     protected $viewPatternsPath = 'templates/table/';
-    protected $pageSize = 4;
+    protected $pageSize = 5;
 }

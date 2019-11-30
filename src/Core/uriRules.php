@@ -24,18 +24,13 @@ return [
     '/supply/edit{id}' => 'supply/showeditform',
     '/supply/add' => 'supply/showaddform',
     '/supply/delete{id}' => 'supply/delete',
+    '/supply/show{sort}' => 'supply/show',
 
-    '/work/page{page}' => 'work/show',
-    '/work/edit{id}' => 'work/showeditform',
-    '/work/add' => 'work/showaddform',
-    '/work/delete{id}' => 'work/delete',
 
     '/goods/page{page}' => 'goods/show',
     '/goods/edit{id}' => 'goods/showeditform',
     '/goods/add' => 'goods/showaddform',
     '/goods/delete{id}' => 'goods/delete',
-    // '/goods/delete{id}' => 'goods/delete',
-
 
     '/recipt/page{page}' => 'recipt/show',
     '/recipt/edit{id}' => 'recipt/showeditform',

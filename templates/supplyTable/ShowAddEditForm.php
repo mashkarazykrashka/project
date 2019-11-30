@@ -1,22 +1,27 @@
 <div>
     <div class='form'>
-            <form action="<?= $URL ?>" method="POST" >
-                <?php
+        <form action="<?= $URL ?>" method="POST">
+            <?php
                 foreach ($columnsNames as $name) {
                     if ($name != 'id') {
                         if ($name == 'users_id') {
-
-                            if ($isAdmin) {
-                                echo "<input type ='hidden' value = '$currentUserId' name = 'users_id'>";
-                            } else {
                                 echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
                                 echo "<br><select class='field' name='users_id'>";
 
+                            if ($isAdmin) {
                                 foreach ($users as $id => $userName) {
+                                    if ($userName !== '-'){                                    
                                     echo "<option value='$id'>$userName</option>";
                                 }
-                                echo "</select></lable><br>";
+                              }
                             }
+                            else {
+                                foreach ($users as $id => $userName) {
+                                    if ($userName == $currentUserName){                                    
+                                        echo "<option value='$id'>$userName</option>";
+                                    }
+                            }}
+                            echo "</select></lable><br>";
                         } elseif ($name == 'recipt_id') {
 
                             echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
@@ -45,8 +50,8 @@
                     }
                 }
                 ?>
-                <input class="button" type="submit" value="OK">
-            </form>
-        </div>
+            <input class="button" type="submit" value="OK">
+        </form>
     </div>
+</div>
 </div>

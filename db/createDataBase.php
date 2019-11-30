@@ -6,14 +6,10 @@ use App\Core\Conf;
 
 require __DIR__."/../vendor/autoload.php";
 
-$file = file_get_contents(__DIR__.'/dbdom.sql');
+$file = file_get_contents(__DIR__.'/dbdomLast.sql');
 $mySQLConnectData = Conf::MYSQL;
 
 unset($mySQLConnectData['dbname']);
-
-// print_r($mySQLConnectData);
-
-
 
 class NewRunner extends Runner {
     protected function errorHandler(array $error)
@@ -25,10 +21,8 @@ class NewRunner extends Runner {
 $run = new NewRunner(DB::Link($mySQLConnectData));
 
 foreach (explode(';', $file) as $value) {
-    // print_r($value);
-    // echo '====================================================================================';
+
     if (!empty($value)) {
         $run->runSQL($value);
     }
 }
-// print_r(explode(';', $file));
