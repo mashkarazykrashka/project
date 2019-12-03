@@ -6,7 +6,8 @@
     border: 5px solid hsl(166, 17%, 75%);
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.5);
-    background-image: linear-gradient(to left bottom, #f9dde1, #ebd3c8, #d3cbb7, #b6c4b1, #9dbab3);}
+    background-image: linear-gradient(to left bottom, #f9dde1, #ebd3c8, #d3cbb7, #b6c4b1, #9dbab3);
+}
 
 .field {
     width: 100%;
@@ -14,7 +15,7 @@
     border: 1px solid rgba(255, 255, 255, .4);
     border-radius: 4px;
     display: block;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Comfortaa', cursive;
     font-size: 18px;
     font-weight: 300;
     padding-left: 10px;
@@ -32,9 +33,26 @@
     box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
     text-shadow: #333333 0 1px 0;
     color: #a04971;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Comfortaa', cursive;
+
+    a:hover {
+        color: #521531;
+    }
 
 }
+
+.button_edit {
+    text-align: center;
+    margin-bottom: 20px;
+    background-image: linear-gradient(to bottom, #dfacbb, #e6b8c4, #edc4cd, #f3d1d7, #f9dde1);
+    padding: 10.5px 21px;
+    border-radius: 15px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
+    text-shadow: #333333 0 1px 0;
+    color: #521531;
+    font-family: 'Comfortaa', cursive;
+}
+
 
 #maincontent {
     background: #746c6a;
@@ -51,25 +69,27 @@
 
 .table {
     background: #dfedef;
+    font-family: 'Comfortaa', cursive;
+
 
     th {
         background: #9dbab3;
-
+        font-size: 22px;
+        font-weight: bolder;
     }
-    a{
+
+    a {
         color: #356459;
     }
-
-
-
 }
 
 .navbar {
     background: #c07d9c;
+    font-family: 'Comfortaa', cursive;
+    font-size: 30px;
 
     .navbar-nav>li>a {
         color: #f9dde1;
-
     }
 
     .navbar-nav>li>a:hover,
@@ -80,6 +100,10 @@
     .dropdown-menu {
         background: #f9dde1;
 
+        a:hover{
+            background: #a04971;
+        }
+
         .dropdown-item {
             color: #c07d9c;
         }
@@ -87,7 +111,26 @@
 
 }
 
-.page-item.page-link{
-    background: #c07d9c;
-    color: red;;
+.pagination {
+    a {
+        background: #f9dde1 !important;
+        border-color: #ecc4cd;
+        color: #a04971;
+    }
+
+    a:hover {
+        color: #521531;
+    }
+}
+
+#number {
+    background: #c07d9c !important;
+    border-color: #ecc4cd;
+
+}
+
+.current_user {
+    margin-right: 0;
+    font-size: 22px;
+    color: #521531;
 }

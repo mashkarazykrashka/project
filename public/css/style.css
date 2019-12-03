@@ -16,7 +16,7 @@
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-radius: 4px;
   display: block;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Comfortaa', cursive;
   font-size: 18px;
   font-weight: 300;
   padding-left: 10px;
@@ -36,7 +36,25 @@
           box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
   text-shadow: #333333 0 1px 0;
   color: #a04971;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Comfortaa', cursive;
+}
+
+.button a:hover {
+  color: #521531;
+}
+
+.button_edit {
+  text-align: center;
+  margin-bottom: 20px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#dfacbb), color-stop(#e6b8c4), color-stop(#edc4cd), color-stop(#f3d1d7), to(#f9dde1));
+  background-image: linear-gradient(to bottom, #dfacbb, #e6b8c4, #edc4cd, #f3d1d7, #f9dde1);
+  padding: 10.5px 21px;
+  border-radius: 15px;
+  -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
+          box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, inset rgba(255, 255, 255, 0.7) 0 1px 0;
+  text-shadow: #333333 0 1px 0;
+  color: #521531;
+  font-family: 'Comfortaa', cursive;
 }
 
 #maincontent {
@@ -53,10 +71,13 @@
 
 .table {
   background: #dfedef;
+  font-family: 'Comfortaa', cursive;
 }
 
 .table th {
   background: #9dbab3;
+  font-size: 22px;
+  font-weight: bolder;
 }
 
 .table a {
@@ -65,6 +86,8 @@
 
 .navbar {
   background: #c07d9c;
+  font-family: 'Comfortaa', cursive;
+  font-size: 30px;
 }
 
 .navbar .navbar-nav > li > a {
@@ -80,12 +103,32 @@
   background: #f9dde1;
 }
 
+.navbar .dropdown-menu a:hover {
+  background: #a04971;
+}
+
 .navbar .dropdown-menu .dropdown-item {
   color: #c07d9c;
 }
 
-.page-item.page-link {
-  background: #c07d9c;
-  color: red;
+.pagination a {
+  background: #f9dde1 !important;
+  border-color: #ecc4cd;
+  color: #a04971;
+}
+
+.pagination a:hover {
+  color: #521531;
+}
+
+#number {
+  background: #c07d9c !important;
+  border-color: #ecc4cd;
+}
+
+.current_user {
+  margin-right: 0;
+  font-size: 22px;
+  color: #521531;
 }
 /*# sourceMappingURL=style.css.map */
