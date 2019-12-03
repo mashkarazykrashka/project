@@ -12,7 +12,7 @@ class SupplyController extends AbstractTableController
 {
     protected $tableName = 'supply';
     protected $viewPatternsPath = 'templates/supplyTable/';
-    protected $pageSize = 2;
+    protected $pageSize = 10;
 
 
     public function __construct()
