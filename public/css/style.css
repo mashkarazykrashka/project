@@ -84,6 +84,10 @@
   color: #356459;
 }
 
+.table a:hover {
+  color: #a04971;
+}
+
 .navbar {
   background: #c07d9c;
   font-family: 'Comfortaa', cursive;
@@ -130,5 +134,9 @@
   margin-right: 0;
   font-size: 22px;
   color: #521531;
+}
+
+#active_th {
+  color: #a04971;
 }
 /*# sourceMappingURL=style.css.map */

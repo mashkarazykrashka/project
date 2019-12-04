@@ -32,7 +32,15 @@ use App\View\Helper\HTML;
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="<?= Dispatcher::dispatcher()->encodeUri("supply/show", ['page' => 1]) ?>">Поставки</a>
+                    <a class="nav-link" 
+                     <?= $_GET['t'] == "supply" ?> ? id='active_th' : ""
+                     href="<?= Dispatcher::dispatcher()->encodeUri("supply/show", ['page' => 1]) ?>">Поставки</a>
+                     
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="<?= Dispatcher::dispatcher()->encodeUri("forms/show", ['page' => 1]) ?>">Формы</a>
+                     
                 </li>
 
 

@@ -81,6 +81,9 @@
     a {
         color: #356459;
     }
+    a:hover{
+        color: #a04971;
+    }
 }
 
 .navbar {
@@ -133,4 +136,7 @@
     margin-right: 0;
     font-size: 22px;
     color: #521531;
+}
+#active_th{
+    color: #a04971;
 }

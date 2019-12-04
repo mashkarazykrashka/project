@@ -26,12 +26,10 @@ abstract class AbstractTableController extends AbstractController
 
         $page = $_GET['page'] ?? 1;
         $sortedFieldName = $_GET['sort'] ?? 'id';
-        // $_GET['sort'] ??= "id";
 
         $table = $this->table->setPageSize($this->pageSize);
         $table->setOrderBy($sortedFieldName);
 
-        // echo $table->getSQL();
         $this->render("show", [
             'table' => $table->getPage($page),
             'pageCount' => $table->pageCount(),
