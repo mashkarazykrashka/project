@@ -28,24 +28,37 @@ use App\View\Helper\HTML;
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" href="<?= Dispatcher::dispatcher()->encodeUri("site/home") ?>">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link".
+                    <?= $_GET['t'] == "site" ? "id='active_th'" : "" ?>.
+                     href="<?= Dispatcher::dispatcher()->encodeUri("site/home") ?>">Home <span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" 
-                     <?= $_GET['t'] == "supply" ?> ? id='active_th' : ""
+                    <a class="nav-link" .
+                     <?= $_GET['t'] == "supply" ? "id='active_th'" : "" ?>.
                      href="<?= Dispatcher::dispatcher()->encodeUri("supply/show", ['page' => 1]) ?>">Поставки</a>
                      
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="<?= Dispatcher::dispatcher()->encodeUri("forms/show", ['page' => 1]) ?>">Формы</a>
-                     
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle".
+                    <?= ($_GET['t'] == "bellakt" || $_GET['t'] == "moloko") ? "id='active_th'" : "" ?>.
+                     href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Выходные формы
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="<?= Dispatcher::dispatcher()->encodeUri("bellakt/show", ['page' => 1]) ?>">ОАО "Беллакт"</a>
+                        <a class="dropdown-item" href="<?= Dispatcher::dispatcher()->encodeUri("moloko/show", ['page' => 1]) ?>">ООО "Молоко"</a>
+
+                    </div>
                 </li>
 
 
+
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle".
+                    <?= ($_GET['t'] == "goods" || $_GET['t'] == "recipt" || $_GET['t'] == "users" ) ? "id='active_th'" : "" ?>.
+                     href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Справочники
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

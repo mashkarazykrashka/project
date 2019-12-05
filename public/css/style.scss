@@ -66,7 +66,10 @@
     height: 100%;
 
 }
-
+h1{
+    font-family: 'Comfortaa', cursive;
+    font-weight: bold;
+}
 .table {
     background: #dfedef;
     font-family: 'Comfortaa', cursive;
@@ -76,6 +79,7 @@
         background: #9dbab3;
         font-size: 22px;
         font-weight: bolder;
+        color: #356459;
     }
 
     a {
@@ -109,6 +113,7 @@
 
         .dropdown-item {
             color: #c07d9c;
+            font-weight: bolder;
         }
     }
 
