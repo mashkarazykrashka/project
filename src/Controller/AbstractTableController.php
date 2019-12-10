@@ -42,7 +42,7 @@ abstract class AbstractTableController extends AbstractController
             'controllerName' => $this->shortClassName(),
             'tableHeaders' => $this->table->getColumnsComments(),
             'isAdmin' => ($_SESSION['user']['cod'] == "adm" ? true : false),
-            'currentUserName' => $_SESSION['user']['name'],
+            'currentUserName' => $_SESSION['user']['description'],
         ]);
     }
 

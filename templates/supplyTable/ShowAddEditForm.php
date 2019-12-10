@@ -4,13 +4,13 @@
             <?php
                 foreach ($columnsNames as $name) {
                     if ($name != 'id') {
-                        if ($name == 'users_id') {
+                        if ($name == 'user_group_id') {
                                 echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
-                                echo "<br><select class='field' name='users_id'>";
+                                echo "<br><select class='field' name='user_group_id'>";
 
                             if ($isAdmin) {
                                 foreach ($users as $id => $userName) {
-                                    if ($userName !== '-'){                                    
+                                    if ($id != '4'){                                    
                                     echo "<option value='$id'>$userName</option>";
                                 }
                               }

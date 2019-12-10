@@ -6,5 +6,5 @@ class UserGroupController extends AbstractTableController
 {
     protected $tableName = 'user_group';
     protected $viewPatternsPath = 'templates/table/';
-    protected $pageSize = 2;
+    protected $pageSize = 5;
 }

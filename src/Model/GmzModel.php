@@ -4,7 +4,7 @@ namespace App\Model;
 
 use TexLab\MyDB\DbEntity;
 
-class MolokoModel extends DbEntity
+class GmzModel extends DbEntity
 {
 
     public function getPage(?int $page = null): array
@@ -13,14 +13,14 @@ class MolokoModel extends DbEntity
         ->reset()
         ->setSelect("`goods`.`nameGoods`, SUM(`quantity`) AS 'SUM'")
         ->setFrom("`supply`, `goods`")
-        ->setWhere("`supply`.`goods_id` = `goods`.`id` AND `user_group_id` = 6")
+        ->setWhere("`supply`.`goods_id` = `goods`.`id` AND `user_group_id` = 7")
         ->setGroupBy("`goods`.`nameGoods`");
         return parent::getPage($page);
     }
 
     public function getSumOfSales()
     {
-        return $this->reset()->runSQL("SELECT SUM(`quantity`) AS 'SUM' FROM `supply` WHERE `user_group_id` = 6")[0]['SUM'];
+        return $this->reset()->runSQL("SELECT SUM(`quantity`) AS 'SUM' FROM `supply` WHERE `user_group_id` = 7")[0]['SUM'];
     }
 
     // public function pageCount()

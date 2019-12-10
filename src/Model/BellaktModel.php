@@ -13,14 +13,14 @@ class BellaktModel extends DbEntity
             ->reset()
             ->setSelect("`goods`.`nameGoods`, SUM(`quantity`) AS 'SUM'")
             ->setFrom("`supply`, `goods`")
-            ->setWhere("`supply`.`goods_id` = `goods`.`id` AND `users_id` = 2")
+            ->setWhere("`supply`.`goods_id` = `goods`.`id` AND `user_group_id` = 5")
             ->setGroupBy("`goods`.`nameGoods`");
         return parent::getPage($page);
     }
 
     public function getSumOfSales()
     {
-        return $this->reset()->runSQL("SELECT SUM(`quantity`) AS 'SUM' FROM `supply` WHERE `users_id` = 2")[0]['SUM'];
+        return $this->reset()->runSQL("SELECT SUM(`quantity`) AS 'SUM' FROM `supply` WHERE `user_group_id` = 5")[0]['SUM'];
     }
 
     // public function pageCount()

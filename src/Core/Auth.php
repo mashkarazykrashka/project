@@ -55,6 +55,6 @@ class Auth
     }
     static public function currentUserInfo()
     {
-        return isset($_SESSION['user']) ? "{$_SESSION['user']['name']} {$_SESSION['user']['surname']} ({$_SESSION['user']['description']})" : '';
+        return isset($_SESSION['user']) ? "{$_SESSION['user']['name']} ({$_SESSION['user']['description']})" : '';
     }
 }

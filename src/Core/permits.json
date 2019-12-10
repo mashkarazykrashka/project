@@ -1,15 +1,7 @@
 {
     "adm": [],
-    "usr": [
-        "UserGroupController",
+    "bel": [
         "UsersController"
     ],
-    "dft": ["FeedBackController",
-        "GoodsController",
-        "ReciptController",
-        "SingUpController",
-        "SupplyController",
-        "UserGroupController",
-        "UsersController"
-    ]
+    "dft": []
 }

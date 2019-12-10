@@ -30,7 +30,7 @@ foreach ($table as $row) {
         }
     }
     foreach ($row as $key => $value) {
-        if ($key == 'users_id' and ($currentUserName == $value || $isAdmin)) {
+        if ($key == 'user_group_id' and ($currentUserName == $value || $isAdmin)) {
             echo "<td><a href='$editLink" . $row['id'] . "'  class='button_edit'>Редактировать</a></td>";
             echo "<td><a href='$delLink" . $row['id'] . "' class='button'>Удалить</a></td></tr>";
         }
