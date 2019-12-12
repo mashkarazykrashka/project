@@ -10,14 +10,14 @@ echo $paginationHTML;
 
 echo "<div class='row justify-content-center'>";
 
-echo "<table class='table table-hover '>";
+echo "<table class='table table-hover'>";
 
 echo "<tr>";
 foreach ($tableHeaders as $fieldName => $th) {
     if ($fieldName != 'id') {
         echo "<th><a "
-        . ($sortedFieldName == $fieldName ? "id=\"active_th\" " : "" ).
-        "href='" . $paginationLink . $currentPage . "&sort=$fieldName'>" . (empty($th) ? $fieldName : $th) . "</a></th>";
+            . ($sortedFieldName == $fieldName ? "id=\"active_th\" " : "") .
+            "href='" . $paginationLink . $currentPage . "&sort=$fieldName'>" . (empty($th) ? $fieldName : $th) . "</a></th>";
     }
 }
 echo "<th colspan='2'></th></tr>";
@@ -40,4 +40,3 @@ echo "</table>";
 echo "<a href='$addLink' class='button'>Добавить</a>";
 echo "</div>";
 echo $paginationHTML;
-

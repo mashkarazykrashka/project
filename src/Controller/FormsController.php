@@ -14,7 +14,7 @@ class FormsController extends AbstractTableController
     protected $tableName = 'supply';
     protected $viewPatternsPath = 'templates/forms/';
     protected $pageSize = 10;
-    
+
     public function __construct()
     {
         parent::__construct();
@@ -49,7 +49,7 @@ class FormsController extends AbstractTableController
         $tableUsers = new DbEntity('user_group', DB::Link(Conf::MYSQL));
 
         $this->render("show", [
-            'table' => $table->setWhere("`supply`.`goods_id` = `goods`.`id` AND `user_group_id` = ".$_POST['id'])->getPage($page),
+            'table' => $table->setWhere("`supply`.`goods_id` = `goods`.`id` AND `user_group_id` = " . $_POST['id'])->getPage($page),
             'pageCount' => $table->pageCount(),
             'paginationLink' => Dispatcher::dispatcher()->encodeUri($this->shortClassName() . "/show", ['page' => '']),
             'sortedFieldName' => $sortedFieldName,
@@ -60,5 +60,4 @@ class FormsController extends AbstractTableController
             'firm' => $tableUsers->getColumn('description')[$_POST['id']],
         ]);
     }
-
 }

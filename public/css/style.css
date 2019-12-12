@@ -104,12 +104,12 @@ h1 {
 }
 
 .navbar .navbar-nav > li > a {
-  color: #f9dde1;
+  color: #f9dde1 !important;
 }
 
 .navbar .navbar-nav > li > a:hover,
 .navbar .navbar-nav > li > a:focus {
-  color: #dfedef;
+  color: #dfedef !important;
 }
 
 .navbar .dropdown-menu {
@@ -147,6 +147,10 @@ h1 {
 }
 
 #active_th {
-  color: #a04971;
+  color: #a04971 !important;
+}
+
+.navbar-toggler-icon {
+  color: #521531;
 }
 /*# sourceMappingURL=style.css.map */

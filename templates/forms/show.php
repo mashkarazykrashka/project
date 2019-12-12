@@ -8,7 +8,7 @@ $paginationHTML .= "<li class='page-item'><a class='page-link' href='" . $pagina
 
 // echo $paginationHTML;
 
-echo "<div class='row justify-content-center'>";
+echo "<div class='row justify-content-center table-responsive'>";
 
 echo "<table class='table table-hover'>";
 echo "<tr>";

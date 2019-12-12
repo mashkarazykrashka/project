@@ -23,35 +23,29 @@ use App\View\Helper\HTML;
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg ">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link".
-                    <?= $_GET['t'] == "site" ? "id='active_th'" : "" ?>.
-                     href="<?= Dispatcher::dispatcher()->encodeUri("site/home") ?>">Главная<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" . <?= $_GET['t'] == "site" ? "id='active_th'" : "" ?>. href="<?= Dispatcher::dispatcher()->encodeUri("site/home") ?>">Главная<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" .
-                     <?= $_GET['t'] == "supply" ? "id='active_th'" : "" ?>.
-                     href="<?= Dispatcher::dispatcher()->encodeUri("supply/show", ['page' => 1]) ?>">Поставки</a>
-                     
+                    <a class="nav-link" . <?= $_GET['t'] == "supply" ? "id='active_th'" : "" ?>. href="<?= Dispatcher::dispatcher()->encodeUri("supply/show", ['page' => 1]) ?>">Поставки</a>
+
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle".
-                    <?= ($_GET['t'] == "goods" || $_GET['t'] == "recipt" || $_GET['t'] == "users" || $_GET['t'] == "usergroup" ) ? "id='active_th'" : "" ?>.
-                     href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" . <?= ($_GET['t'] == "goods" || $_GET['t'] == "recipt" || $_GET['t'] == "users" || $_GET['t'] == "usergroup") ? "id='active_th'" : "" ?>. href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Справочники
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="<?= Dispatcher::dispatcher()->encodeUri("goods/show", ['page' => 1]) ?>">Товары</a>
-                        <a class="dropdown-item" href="<?= Dispatcher::dispatcher()->encodeUri("recipt/show", ['page' => 1]) ?>">Покупатели</a> 
+                        <a class="dropdown-item" href="<?= Dispatcher::dispatcher()->encodeUri("recipt/show", ['page' => 1]) ?>">Покупатели</a>
                         <a class="dropdown-item <?= $_SESSION['user']['cod'] != "adm" ? " disabled" : "" ?>" href="<?= Dispatcher::dispatcher()->encodeUri("usergroup/show", ['page' => 1]) ?>">Поставщики</a>
 
                         <a class="dropdown-item <?= $_SESSION['user']['cod'] != "adm" ? " disabled" : "" ?>" href="<?= Dispatcher::dispatcher()->encodeUri("users/show", ['page' => 1]) ?>">Пользователи</a>
@@ -60,9 +54,7 @@ use App\View\Helper\HTML;
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle  <?= $_SESSION['user']['cod'] != "adm" ? " disabled" : "" ?>".
-                    <?= $_GET['t'] == "forms"  ? "id='active_th'" : "" ?>.
-                     href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle  <?= $_SESSION['user']['cod'] != "adm" ? " disabled" : "" ?>" . <?= $_GET['t'] == "forms"  ? "id='active_th'" : "" ?>. href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Выходные формы
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">

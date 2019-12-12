@@ -66,7 +66,7 @@ class SignUpController extends AbstractController
             $_SESSION['checkSignUpData']['Errors'][] = "Введите логин";
         }
 
-        if (!empty((new Table('users', DB::Link(Conf::MYSQL)))->get(['login'=> $data['login']]))) {
+        if (!empty((new Table('users', DB::Link(Conf::MYSQL)))->get(['login' => $data['login']]))) {
             $_SESSION['checkSignUpData']['Errors'][] = "Этот логин занят!";
         }
 

@@ -14,13 +14,13 @@ class Router
     public $url;
     public function __construct()
     {
-        $rules = include __DIR__."/uriRules.php";
+        $rules = include __DIR__ . "/uriRules.php";
 
-        Dispatcher::init(new Disp($rules, Conf::CLEAN_URL));    
+        Dispatcher::init(new Disp($rules, Conf::CLEAN_URL));
 
 
         $decodeUri = Dispatcher::dispatcher()->decodeUri($_SERVER['REQUEST_URI']);
-        
+
         if (!empty($decodeUri['handler'])) {
             $handler = explode('/', $decodeUri['handler']);
             $_GET["t"] = $handler[0];
@@ -32,7 +32,7 @@ class Router
     }
     public function run()
     {
-       if (Auth::checkControllerPermit($this->controllerName)) {
+        if (Auth::checkControllerPermit($this->controllerName)) {
             $className = "App\\Controller\\{$this->controllerName}";
             if (class_exists($className)) {
                 $MVC = new $className();
@@ -43,7 +43,7 @@ class Router
                     (new ErrorController())->notFoundError("Not Found Action: {$this->actionName}");
                 }
             } else {
-                            //    echo "нет такого класса: $this->controllerName";
+                //    echo "нет такого класса: $this->controllerName";
                 (new ErrorController())->notFoundError("Not Found Controller: {$this->controllerName}");
             }
         } else {

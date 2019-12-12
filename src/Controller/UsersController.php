@@ -12,7 +12,7 @@ class UsersController extends AbstractTableController
     protected $tableName = 'users';
     protected $viewPatternsPath = 'templates/table/';
     protected $pageSize = 10;
-    
+
     public function __construct()
     {
         parent::__construct();
@@ -41,7 +41,7 @@ class UsersController extends AbstractTableController
         $tableUsersGroup = new DbEntity('user_group', DB::Link(Conf::MYSQL));
 
         $this->view->setPatternsPath('templates/usersTable/');
-        
+
         $this->render("ShowAddEditForm", [
             'columnsNames' => $this->table->getColumnsNames(),
             'URL' => '?t=' . $this->shortClassName() . '&a=Add',
@@ -49,6 +49,4 @@ class UsersController extends AbstractTableController
             'tableHeaders' => $this->table->getColumnsComments()
         ]);
     }
-
-
 }
