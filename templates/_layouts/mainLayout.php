@@ -24,7 +24,9 @@ use App\View\Helper\HTML;
 
 <body>
     <nav class="navbar navbar-expand-lg ">
-    <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
 
             <ul class="navbar-nav">
@@ -50,9 +52,9 @@ use App\View\Helper\HTML;
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="<?= Dispatcher::dispatcher()->encodeUri("goods/show", ['page' => 1]) ?>">Товары</a>
                         <a class="dropdown-item" href="<?= Dispatcher::dispatcher()->encodeUri("recipt/show", ['page' => 1]) ?>">Покупатели</a> 
+                        <a class="dropdown-item <?= $_SESSION['user']['cod'] != "adm" ? " disabled" : "" ?>" href="<?= Dispatcher::dispatcher()->encodeUri("usergroup/show", ['page' => 1]) ?>">Поставщики</a>
 
                         <a class="dropdown-item <?= $_SESSION['user']['cod'] != "adm" ? " disabled" : "" ?>" href="<?= Dispatcher::dispatcher()->encodeUri("users/show", ['page' => 1]) ?>">Пользователи</a>
-                        <a class="dropdown-item <?= $_SESSION['user']['cod'] != "adm" ? " disabled" : "" ?>" href="<?= Dispatcher::dispatcher()->encodeUri("usergroup/show", ['page' => 1]) ?>">Поставщики</a>
 
                     </div>
                 </li>
@@ -75,7 +77,6 @@ use App\View\Helper\HTML;
         <div class="current_user">
             <?= Auth::currentUserInfo() . " " . (isset($_SESSION['user']) ? "<a href='?a=logout'><img src='/public/css/img/logout.png'></a>" : "") ?>
         </div>
-</div>
     </nav>
 
     <div id="maincontent">

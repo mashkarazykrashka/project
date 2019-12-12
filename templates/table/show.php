@@ -15,31 +15,34 @@ echo "<table class='table table-hover'>";
 echo "<tr>";
 foreach ($tableHeaders as $fieldName => $th) {
     if ($fieldName != 'id') {
-        echo "<th><a href='" . $paginationLink . $currentPage . "&sort=$fieldName'>".(empty($th) ? $fieldName : $th). "</a></th>";
+        echo "<th><a href='" . $paginationLink . $currentPage . "&sort=$fieldName'>" . (empty($th) ? $fieldName : $th) . "</a></th>";
     }
 }
 if ($isAdmin) {
-    echo "<th></th></tr>";
+    echo "<th colspan = 2></th></tr>";
 }
 foreach ($table as $row) {
     echo "<tr>";
     foreach ($row as $key => $value) {
-                if ($key == 'signFirm') {
-                    switch ($value) {
-                        case '1':
-                            echo "<td>Да</td>";
-                        break;
-                        default:
-                        echo "<td>Нет</td>";
-                            break;
-                    }
-        }elseif ($key != 'id') {
+        if ($key == 'signFirm') {
+            switch ($value) {
+                case '1':
+                    echo "<td>Да</td>";
+                    break;
+                default:
+                    echo "<td>Нет</td>";
+                    break;
+            }
+        } elseif ($key != 'id') {
             echo "<td>$value</td>";
         }
-
     }
     if ($isAdmin) {
         echo "<td><a href='$editLink" . $row['id'] . "' class='button_edit'>Редактировать</a></td>";
+
+        if ($_GET['t'] == "users") {
+            echo "<td><a href='$delLink" . $row['id'] . "' class='button'>Удалить</a></td></tr>";
+        }
     }
 }
 echo "</table>";

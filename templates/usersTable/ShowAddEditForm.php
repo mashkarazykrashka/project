@@ -1,5 +1,5 @@
         <div class='form'>
-            <form action="<?= $URL ?>" method="POST" >
+            <form action="<?= $URL ?>" method="POST">
                 <?php
                 foreach ($columnsNames as $name) {
                     if ($name != 'id') {
@@ -7,7 +7,7 @@
 
                             echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
                             echo "<br><select class='field' name='user_group_id' required>";
-                            foreach ($userGroup as $id => $groupName) {                                
+                            foreach ($userGroup as $id => $groupName) {
                                 echo "<option value='$id'>$groupName</option>";
                             }
 
@@ -17,7 +17,7 @@
                                 . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name])
                                 . "<input class='field' type='text' name='"
                                 . $name . "' placeholder='"
-                                .(empty($tableHeaders[$name]) ? $name : $tableHeaders[$name])."'value='"
+                                . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]) . "'value='"
                                 . ($editValues[$name] ?? '') . "' required></label><br>";
                         }
                     }
