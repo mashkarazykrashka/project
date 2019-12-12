@@ -10,7 +10,7 @@ echo $paginationHTML;
 
 echo "<div class='row justify-content-center'>";
 
-echo "<table class='table table-hover'>";
+echo "<table class='table table-hover '>";
 
 echo "<tr>";
 foreach ($tableHeaders as $fieldName => $th) {

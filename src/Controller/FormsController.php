@@ -2,9 +2,7 @@
 
 namespace App\Controller;
 
-use App\Model\MolokoModel;
-use App\Model\BellaktModel;
-use App\Model\GmzModel;
+use App\Model\FormsModel;
 use TexLab\MyDB\DB;
 use App\Core\Conf;
 use TexLab\MyDB\DbEntity;
@@ -40,31 +38,18 @@ class FormsController extends AbstractTableController
     public function actionShow()
     {
 
-        switch ($_POST['id']) {
-            case '5':
-                $this->table = new BellaktModel($this->tableName, DB::Link(Conf::MYSQL));
-            break;
-            
-            case '6':
-                $this->table = new MolokoModel($this->tableName, DB::Link(Conf::MYSQL));
-            break;
-
-            case '7':
-                $this->table = new GmzModel($this->tableName, DB::Link(Conf::MYSQL));
-            break;
-
-        }
+        $this->table = new FormsModel($this->tableName, DB::Link(Conf::MYSQL));
 
         $page = $_GET['page'] ?? 1;
         $sortedFieldName = $_GET['sort'] ?? 'id';
 
         $table = $this->table->setPageSize($this->pageSize);
         $table->setOrderBy($sortedFieldName);
-        $sum = $this->table->getSumOfSales();
+        $sum = $this->table->getSumOfSales($_POST['id']);
         $tableUsers = new DbEntity('user_group', DB::Link(Conf::MYSQL));
 
         $this->render("show", [
-            'table' => $table->getPage($page),
+            'table' => $table->setWhere("`supply`.`goods_id` = `goods`.`id` AND `user_group_id` = ".$_POST['id'])->getPage($page),
             'pageCount' => $table->pageCount(),
             'paginationLink' => Dispatcher::dispatcher()->encodeUri($this->shortClassName() . "/show", ['page' => '']),
             'sortedFieldName' => $sortedFieldName,

@@ -5,6 +5,9 @@
   padding: 30px 30px 6px 30px;
   border: 5px solid #b4cac5;
   border-radius: 15px;
+  color: #a04971;
+  font-size: 20px;
+  font-family: 'Comfortaa', cursive;
   background: rgba(0, 0, 0, 0.5);
   background-image: -webkit-gradient(linear, right top, left bottom, from(#f9dde1), color-stop(#ebd3c8), color-stop(#d3cbb7), color-stop(#b6c4b1), to(#9dbab3));
   background-image: linear-gradient(to left bottom, #f9dde1, #ebd3c8, #d3cbb7, #b6c4b1, #9dbab3);

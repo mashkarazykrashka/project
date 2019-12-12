@@ -23,14 +23,15 @@ use App\View\Helper\HTML;
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg">
-
+    <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
+
             <ul class="navbar-nav">
                 <li class="nav-item active">
                     <a class="nav-link".
                     <?= $_GET['t'] == "site" ? "id='active_th'" : "" ?>.
-                     href="<?= Dispatcher::dispatcher()->encodeUri("site/home") ?>">Home <span class="sr-only">(current)</span></a>
+                     href="<?= Dispatcher::dispatcher()->encodeUri("site/home") ?>">Главная<span class="sr-only">(current)</span></a>
                 </li>
 
                 <li class="nav-item">
@@ -41,22 +42,8 @@ use App\View\Helper\HTML;
                 </li>
 
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle  <?= $_SESSION['user']['cod'] != "adm" ? " disabled" : "" ?>".
-                    <?= $_GET['t'] == "forms"  ? "id='active_th'" : "" ?>.
-                     href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Выходные формы
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="<?= Dispatcher::dispatcher()->encodeUri("forms/choosefirm") ?>">Валовый оборот</a>
-
-                    </div>
-                </li>
-
-
-
-                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle".
-                    <?= ($_GET['t'] == "goods" || $_GET['t'] == "recipt" || $_GET['t'] == "users" ) ? "id='active_th'" : "" ?>.
+                    <?= ($_GET['t'] == "goods" || $_GET['t'] == "recipt" || $_GET['t'] == "users" || $_GET['t'] == "usergroup" ) ? "id='active_th'" : "" ?>.
                      href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Справочники
                     </a>
@@ -70,6 +57,17 @@ use App\View\Helper\HTML;
                     </div>
                 </li>
 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle  <?= $_SESSION['user']['cod'] != "adm" ? " disabled" : "" ?>".
+                    <?= $_GET['t'] == "forms"  ? "id='active_th'" : "" ?>.
+                     href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Выходные формы
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="<?= Dispatcher::dispatcher()->encodeUri("forms/choosefirm") ?>">Валовый оборот</a>
+
+                    </div>
+                </li>
             </ul>
 
 
@@ -77,7 +75,7 @@ use App\View\Helper\HTML;
         <div class="current_user">
             <?= Auth::currentUserInfo() . " " . (isset($_SESSION['user']) ? "<a href='?a=logout'><img src='/public/css/img/logout.png'></a>" : "") ?>
         </div>
-
+</div>
     </nav>
 
     <div id="maincontent">

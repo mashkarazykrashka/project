@@ -6,7 +6,7 @@
                     if ($name != 'id') {
                         if ($name == 'user_group_id') {
                                 echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
-                                echo "<br><select class='field' name='user_group_id'>";
+                                echo "<br><select class='field' name='user_group_id' required>";
 
                             if ($isAdmin) {
                                 foreach ($users as $id => $userName) {
@@ -25,7 +25,7 @@
                         } elseif ($name == 'recipt_id') {
 
                             echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
-                            echo "<br><select class='field' name='recipt_id'>";
+                            echo "<br><select class='field' name='recipt_id' required>";
                             foreach ($recipt as $id => $reciptName) {
                                 echo "<option value='$id'>$reciptName</option>";
                             }
@@ -34,7 +34,7 @@
                         } elseif ($name == 'goods_id') {
 
                             echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
-                            echo "<br><select class='field' name='goods_id'>";
+                            echo "<br><select class='field' name='goods_id' required>";
                             foreach ($goods as $id => $goodsName) {
                                 echo "<option value='$id'>$goodsName</option>";
                             }
@@ -45,7 +45,7 @@
                                 . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name])
                                 . "<input class='field' type='number' name='"
                                 . $name . "' value='"
-                                . ($editValues[$name] ?? '') . "'></label><br>";
+                                . ($editValues[$name] ?? '') . "' required></label><br>";
                         }
                     }
                 }

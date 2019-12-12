@@ -6,7 +6,7 @@
                         if ($name == 'user_group_id') {
 
                             echo "<label>" . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name]);
-                            echo "<br><select class='field' name='user_group_id'>";
+                            echo "<br><select class='field' name='user_group_id' required>";
                             foreach ($userGroup as $id => $groupName) {                                
                                 echo "<option value='$id'>$groupName</option>";
                             }
@@ -16,8 +16,9 @@
                             echo "<label>"
                                 . (empty($tableHeaders[$name]) ? $name : $tableHeaders[$name])
                                 . "<input class='field' type='text' name='"
-                                . $name . "' value='"
-                                . ($editValues[$name] ?? '') . "'></label><br>";
+                                . $name . "' placeholder='"
+                                .(empty($tableHeaders[$name]) ? $name : $tableHeaders[$name])."'value='"
+                                . ($editValues[$name] ?? '') . "' required></label><br>";
                         }
                     }
                 }

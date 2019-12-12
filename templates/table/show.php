@@ -19,18 +19,27 @@ foreach ($tableHeaders as $fieldName => $th) {
     }
 }
 if ($isAdmin) {
-    echo "<th colspan='2'></th></tr>";
+    echo "<th></th></tr>";
 }
 foreach ($table as $row) {
     echo "<tr>";
     foreach ($row as $key => $value) {
-        if ($key != 'id') {
+                if ($key == 'signFirm') {
+                    switch ($value) {
+                        case '1':
+                            echo "<td>Да</td>";
+                        break;
+                        default:
+                        echo "<td>Нет</td>";
+                            break;
+                    }
+        }elseif ($key != 'id') {
             echo "<td>$value</td>";
         }
+
     }
     if ($isAdmin) {
         echo "<td><a href='$editLink" . $row['id'] . "' class='button_edit'>Редактировать</a></td>";
-        echo "<td><a href='$delLink" . $row['id'] . "' class='button'>Удалить</a></td></tr>";
     }
 }
 echo "</table>";
