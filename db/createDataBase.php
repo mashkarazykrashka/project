@@ -6,7 +6,7 @@ use App\Core\Conf;
 
 require __DIR__."/../vendor/autoload.php";
 
-$file = file_get_contents(__DIR__.'/dbdomLast.sql');
+$file = file_get_contents(__DIR__.'/db.sql');
 $mySQLConnectData = Conf::MYSQL;
 
 unset($mySQLConnectData['dbname']);
