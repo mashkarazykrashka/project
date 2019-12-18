@@ -58,7 +58,7 @@ class SupplyController extends AbstractTableController
             'recipt' => $tableRecipt->getColumn('nameRecipt'),
             'goods' => $tableGoods->getColumn('nameGoods'),
             'tableHeaders' => $this->table->getColumnsComments(),
-            'currentUserName' => $_SESSION['user']['name'],
+            'currentUserName' => $_SESSION['user']['description'],
             'isAdmin' => $_SESSION['user']['cod'] == "adm" ? true : false
 
         ]);
